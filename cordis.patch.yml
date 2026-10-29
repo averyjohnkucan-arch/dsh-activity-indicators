@@ -1,0 +1,4 @@
+- insert:
+    - id: dsh-activity-indicators
+      name: dsh-activity-indicators
+      config: {}
