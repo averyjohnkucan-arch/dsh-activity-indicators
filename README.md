@@ -50,3 +50,5 @@ npm pack
 ```
 
 Tests cover phase transitions, empty versus nonempty token deltas, reasoning and tool calls, scheduler admission and handoff, cancellation cleanup, Cordis lifecycle and authentication, nested subagent rollup, and the actual browser module's slot registration and rendered CSS. No GPU is needed. Live GPU generation is left for installation testing.
+
+See [COMPATIBILITY.md](COMPATIBILITY.md) for supported DSH versions and upgrade checks.

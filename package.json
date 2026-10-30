@@ -1,15 +1,58 @@
 {
   "name": "dsh-activity-indicators",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Grey prefill and blue output spinners for DSH chats and subagents.",
   "type": "module",
   "license": "MIT",
-  "repository": {"type":"git","url":"git+https://github.com/averyjohnkucan-arch/dsh-activity-indicators.git"},
-  "exports": {".":"./index.js","./client":"./client.js"},
-  "files": ["index.js","client.js","lib","cordis.patch.yml","README.md","LICENSE","THIRD_PARTY_LICENSES.md"],
-  "engines": {"node":">=22.19","dsh":"0.2.1-rc.2"},
-  "peerDependencies": {"@deepseek-ai/cordis":"~4.0.5"},
-  "devDependencies": {"@deepseek-ai/cordis":"~4.0.5","react":"^18.2.0","react-test-renderer":"^18.2.0"},
-  "scripts": {"build":"node scripts/build-client.mjs","test":"node --test test/*.test.js","check":"node --check index.js && node --check lib/activity.js && node --check lib/http.js && node --check client.js"},
-  "dsh": {"bundle":{"patch":"./cordis.patch.yml"},"client":{"platform":"web","immediately":true,"inject":["@deepseek-ai/dsh-client-ui-workspace","@deepseek-ai/dsh-client-ui-subagent"]}}
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/averyjohnkucan-arch/dsh-activity-indicators.git"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_LICENSES.md"
+  ],
+  "engines": {
+    "node": ">=22.19",
+    "dsh": ">=0.2.1-rc.2 <0.3.0-0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "~4.0.5",
+    "react": "^18.2.0",
+    "react-test-renderer": "^18.2.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "test": "node --test test/*.test.js",
+    "check": "node --check index.js && node --check lib/activity.js && node --check lib/http.js && node --check client.js",
+    "check:dsh": "node scripts/check-dsh-compatibility.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-workspace",
+        "@deepseek-ai/dsh-client-ui-subagent"
+      ],
+      "external": [
+        "@deepseek-ai/dsh-client-ui-primitives"
+      ]
+    }
+  }
 }
